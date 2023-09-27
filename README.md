@@ -8,3 +8,6 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 ![Screenshot of the UI (Sign In Page)](https://github.com/dejesusron/react-firebase-auth/blob/main/screenshots/Screen%20Shot%202023-09-27%20at%208.29.37%20AM.png)
+![Screenshot of the UI (Sign Up Page)](https://github.com/dejesusron/react-firebase-auth/blob/main/screenshots/Screen%20Shot%202023-09-27%20at%208.29.51%20AM.png)
+![Screenshot of the UI (Forgot Password Page)](https://github.com/dejesusron/react-firebase-auth/blob/main/screenshots/Screen%20Shot%202023-09-27%20at%208.30.04%20AM.png)
+![Screenshot of the UI (Protected Route)](https://github.com/dejesusron/react-firebase-auth/blob/main/screenshots/Screen%20Shot%202023-09-27%20at%208.30.35%20AM.png)
