@@ -6,14 +6,20 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 const index = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const { signUp } = useUserAuth();
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
+
+    if (password !== confirmPassword) {
+      return setError("Passwords do not match");
+    }
 
     try {
       await signUp(email, password);
@@ -25,6 +31,10 @@ const index = () => {
 
   const handleShowPassword = () => {
     setShowPassword(!showPassword);
+  };
+
+  const handleShowConfirmPassword = () => {
+    setShowConfirmPassword(!showConfirmPassword);
   };
 
   return (
@@ -61,12 +71,31 @@ const index = () => {
                 />
               )}
             </div>
+            <div className="relative">
+              <input
+                type={showConfirmPassword ? "text" : "password"}
+                placeholder="Confirm Password"
+                className="border border-[#333] p-3 w-full"
+                onChange={(e) => setConfirmPassword(e.target.value)}
+              />
+              {showConfirmPassword ? (
+                <FaEyeSlash
+                  onClick={handleShowConfirmPassword}
+                  className="absolute top-1/2 right-4 h-[20px] w-[20px] cursor-pointer translate-y-[-50%]"
+                />
+              ) : (
+                <FaEye
+                  onClick={handleShowConfirmPassword}
+                  className="absolute top-1/2 right-4 h-[20px] w-[20px] cursor-pointer translate-y-[-50%]"
+                />
+              )}
+            </div>
 
             <button
               type="submit"
               className="border border-[#333] bg-[#333] p-3 text-[#fff]"
             >
-              Sign In
+              Sign Up
             </button>
           </form>
         </div>
